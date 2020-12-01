@@ -12,9 +12,12 @@ function createTicket(form) {
         url: address,
         contentType: 'application/json',
         type: 'POST',
+        headers: {
+            "Authorization": "Basic " + btoa('james.preston@foundry.com/O6eZkPEOAKXVnllIkixkPq1WuR2EeYz8N87bbQGy')
+          },
         data: data,
-        auth: ('james.preston@foundry.com/O6eZkPEOAKXVnllIkixkPq1WuR2EeYz8N87bbQGy', btoa('james.preston@foundry.com/O6eZkPEOAKXVnllIkixkPq1WuR2EeYz8N87bbQGy'))
       }).done((data) => {
+        console.log(JSON.stringify(data))
         resolve(data)
       });
     }));
