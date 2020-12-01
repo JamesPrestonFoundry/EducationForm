@@ -20,7 +20,7 @@ function zdAuthRequest(method, address, data) {
     success: function(data, textStatus, xhr) {
         console.log(xhr.status);
     },
-    complete: function(xhr, textStatus) {
+    always: function(xhr, textStatus) {
         console.log(xhr.status);
     } 
     })
