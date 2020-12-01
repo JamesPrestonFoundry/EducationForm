@@ -16,6 +16,12 @@ function zdAuthRequest(method, address, data) {
     data: JSON.stringify(data),
     headers: {
         "Authorization": 'Basic ' + btoa('bugbot@thefoundry.co.uk/token:Olg1uDHoQDY1SvZoEosS01MEBzdoIZ1SSpnXQZu4')
-        },
+    },
+    success: function(data, textStatus, xhr) {
+        console.log(xhr.status);
+    },
+    complete: function(xhr, textStatus) {
+        console.log(xhr.status);
+    } 
     })
 };
