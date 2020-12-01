@@ -12,8 +12,9 @@ function zdAuthRequest(method, address, data) {
     url: address,
     type: method,
     contentType: 'application/json; charset=utf-8',
-    dataType: 'json',
+    dataType: 'jsonp',
     data: JSON.stringify(data),
+    timeout: 2000,
     headers: {
         "Authorization": 'Basic ' + btoa('bugbot@thefoundry.co.uk/token:Olg1uDHoQDY1SvZoEosS01MEBzdoIZ1SSpnXQZu4')
     },
