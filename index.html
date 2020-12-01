@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;">
+  <head>
+    <title>Education Form</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+    <link rel="canonical" href="index.html">
+  </head>
+  <body data-home-page="Page.html" data-home-page-title="Education Form">
+    <section>
+      <div>
+        <div>
+          <form onsubmit="return createTicket(this)" style="padding: 15px;" source="custom" name="form">
+            <label for="fname">First name:</label><br>
+            <input type="text" id="fname" name="fname" placeholder="First Name" required="required"><br>
+            <label for="lname">Last name:</label><br>
+            <input type="text" id="lname" name="lname" placeholder="Last Name" required="required"><br>
+            <label for="email" class="u-label">Email</label><br>
+            <input type="email" placeholder="Email" id="email" name="email"  required="required"><br>
+            <label for="country" class="u-label">Country</label><br>
+            <select id="country" name="country" required="required"><br>
+              <option value="United Kingdom">United Kingdom</option>
+              <option value="United States">United States</option>
+              <option value="Australia">Australia</option>
+            </select><br>
+            <label for="school" class="u-label">School</label><br>
+            <input type="text" placeholder="School" id="school" name="school"  required="required"><br>
+            <label for="course" class="u-label">Course</label><br>
+            <input type="text" placeholder="Course" id="course" name="course" required="required"><br>
+            <label for="date" class="u-label">Graduation Date</label><br>
+            <input type="date" placeholder="DD/MM/YY" id="graduation" name="graduation" required="required"><br>
+            <input type="submit" value="Submit">
+          </form>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
