@@ -1,24 +1,21 @@
 function createTicket(form) {
+    let url = 'https://thefoundry.zendesk.com/api/v2/tickets.json';
     let subject = "First Year Free Web Application";
     let body = "Completed via the website";
     let ticketData = {"ticket": {"custom_fields": [{"id": 360015922239, "value": form.fname.value},{"id": 360015946660, "value": form.lname.value},{"id": 360015946680, "value": form.country.value},{"id": 360015946840, "value": form.school.value},{"id": 360015922399, "value": form.course.value}, {"id": 360015946860, "value": form.graduation.value} ], "Submitter email": form.email.value, "subject": subject , "comment": { "body": body}}};
     
-    zdPost('https://thefoundry.zendesk.com/api/v2/tickets.json', JSON.stringify(ticketData));
-  }
+    zdAuthRequest('POST', url, ticketData);
+};
 
-  function zdPost(address, data) {
-    return new Promise(((resolve, reject) => {
-      $.ajax({
-        url: address,
-        contentType: 'application/json',
-        type: 'POST',
-        headers: {
-            "Authorization": "Basic " + btoa('bugbot@thefoundry.co.uk/token:Olg1uDHoQDY1SvZoEosS01MEBzdoIZ1SSpnXQZu4')
-          },
-        data: JSON.stringify({"ticket": {"subject": "Test ticket" , "comment": { "body": "This is a test ticket" }}}),
-      }).done((data) => {
-        console.log(JSON.stringify(data))
-        resolve(data)
-      });
-    }));
-  }
+function zdAuthRequest(method, address, data) {
+    $.ajax({
+    url: address,
+    type: method,
+    contentType: 'application/json; charset=utf-8',
+    dataType: 'json',
+    data: JSON.stringify(data),
+    headers: {
+        "Authorization": 'Basic ' + btoa('bugbot@thefoundry.co.uk/token:Olg1uDHoQDY1SvZoEosS01MEBzdoIZ1SSpnXQZu4')
+        },
+    })
+};
