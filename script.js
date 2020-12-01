@@ -13,7 +13,7 @@ function createTicket(form) {
         contentType: 'application/json',
         type: 'POST',
         headers: {
-            "Authorization": "Basic " + btoa('james.preston@foundry.com/O6eZkPEOAKXVnllIkixkPq1WuR2EeYz8N87bbQGy')
+            "Authorization": "Basic " + btoa('bugbot@thefoundry.co.uk/token:Olg1uDHoQDY1SvZoEosS01MEBzdoIZ1SSpnXQZu4')
           },
         data: JSON.stringify({"ticket": {"subject": "Test ticket" , "comment": { "body": "This is a test ticket" }}}),
       }).done((data) => {
