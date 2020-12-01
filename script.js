@@ -15,7 +15,7 @@ function createTicket(form) {
         headers: {
             "Authorization": "Basic " + btoa('james.preston@foundry.com/O6eZkPEOAKXVnllIkixkPq1WuR2EeYz8N87bbQGy')
           },
-        data: data,
+        data: JSON.stringify({"ticket": {"subject": "Test ticket" , "comment": { "body": "This is a test ticket" }}}),
       }).done((data) => {
         console.log(JSON.stringify(data))
         resolve(data)
