@@ -15,8 +15,8 @@ function zdAuthRequest(method, address, data) {
     dataType: 'jsonp',
     data: JSON.stringify(data),
     timeout: 2000,
-    headers: {
-        "Authorization": 'Basic ' + btoa('bugbot@thefoundry.co.uk/token:Olg1uDHoQDY1SvZoEosS01MEBzdoIZ1SSpnXQZu4')
+    beforeSend: function(xhr){
+        xhr.setREquestHeader("Authorization", 'Basic ' + btoa('bugbot@thefoundry.co.uk/token:Olg1uDHoQDY1SvZoEosS01MEBzdoIZ1SSpnXQZu4'));
     },
     success: function(data, textStatus, xhr) {
         console.log(xhr.status);
